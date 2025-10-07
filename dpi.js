@@ -1,18 +1,18 @@
 //video controler---------------------------------
-const sound = document.querySelector(".sound-img");
-const noSound = document.querySelector(".no-sound-img");
-const video = document.querySelector(".video");
+// const sound = document.querySelector(".sound-img");
+// const noSound = document.querySelector(".no-sound-img");
+// const video = document.querySelector(".video");
 
-sound.addEventListener("click", () => {
-  sound.style.display = "none";
-  noSound.style.display = "block";
-  video.muted = true;
-});
-noSound.addEventListener("click", () => {
-  noSound.style.display = "none";
-  sound.style.display = "block";
-  video.muted = false;
-});
+// sound.addEventListener("click", () => {
+//   sound.style.display = "none";
+//   noSound.style.display = "block";
+//   video.muted = true;
+// });
+// noSound.addEventListener("click", () => {
+//   noSound.style.display = "none";
+//   sound.style.display = "block";
+//   video.muted = false;
+// });
 //quick-img jump like river---------------------------------
 
 const quickDemos = document.querySelectorAll(".quick-demo-ctn");
