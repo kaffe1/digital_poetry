@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "myFont";
+  src: url("./assets/qingkai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body,
+p {
+  font-family: "myFont", sans-serif;
+  text-align: center;
+  font-size: 24px;
+  line-height: 140%;
+  margin: 20px auto;
+}
+body {
+  padding: 30px;
+}
+.char {
+  display: inline-block;
+}
+
+.author {
+  position: relative;
+  top: -10px;
+  left: 35px;
+}
+.poem {
+  width: 520px;
+  margin: 0 auto;
+}
+.record-button,
+.start-button {
+  width: 120px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  border-width: 1px;
+  margin: 14px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+.record-button:hover,
+.start-button:hover {
+  background-color: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
+}
+.record-button {
+  position: relative;
+}
+.record-button::before {
+  content: "根据节奏连续按下space空格键，来控制文字出现时刻";
+  font-size: 16px;
+  width: 200px;
+  color: rgb(237, 4, 4);
+  /* height: 60px; */
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: rgba(232, 232, 232, 0.416);
+  backdrop-filter: blur(10px);
+
+  position: absolute;
+  left: -58px;
+  top: -75px;
+  padding: 10px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+.record-button:hover::before {
+  opacity: 1;
+}
+
+.refresh-button {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 6px auto;
+  background-color: white;
+  border-radius: 50%;
+  border-width: 1px;
+  position: relative;
+  left: 220px;
+  top: -60px;
+  cursor: pointer;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+.refresh-img {
+  width: 22px;
+  margin-top: 4px;
+  display: inline-block;
+}
+.refresh-hover-img {
+  width: 22px;
+  margin-top: 4px;
+  display: none;
+}
+
+.refresh-button:hover {
+  background-color: rgb(46, 46, 46);
+}

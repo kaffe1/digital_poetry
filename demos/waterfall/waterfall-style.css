@@ -1,0 +1,110 @@
+body,
+html {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  /* padding-top: 1px; */
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.text-canvas-ctn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 10px; */
+}
+.text-ctn {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvasContainer {
+  /* right: 0px; */
+  z-index: -0.5;
+  border: 0px solid rgba(228, 50, 50, 0.458);
+  /* padding: 10px; */
+}
+
+.text p {
+  white-space: nowrap;
+}
+.word {
+  display: inline-block;
+  transition: transform 0.5s ease, color 0.5s ease;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.dropWord {
+  display: inline-block;
+  opacity: 1;
+  transition: transform 3s ease, opacity 3s ease;
+}
+
+.milky-way {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 4700px;
+  /* padding: 0; */
+
+  z-index: -1;
+}
+.starsky {
+  width: 100%;
+  min-width: 1280px;
+
+  height: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 5000px;
+  display: none;
+  position: absolute;
+  top: 500px;
+
+  z-index: -2;
+}
+
+.backgroundPic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  position: relative;
+}
+.dropline1-div {
+  width: 308px;
+  height: 0px;
+  position: absolute;
+  top: 334px;
+
+  overflow: hidden;
+}
+.dropline1-img {
+  width: 100%;
+}
+
+.dropline2-div {
+  width: 308px;
+  height: 0px;
+  position: absolute;
+  top: 407px;
+
+  overflow: hidden;
+}
+.dropline2-img {
+  width: 100%;
+}

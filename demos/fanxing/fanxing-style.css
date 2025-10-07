@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "myFont";
+  src: url("./assets/qingkai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 5120px;
+  height: 3328px;
+  box-sizing: border-box;
+}
+.mouse-coordinates {
+  position: absolute;
+  background-color: rgba(0, 0, 0);
+  color: rgb(0, 255, 174);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  pointer-events: none; /* 让鼠标可以穿透，防止干扰点击 */
+  white-space: nowrap;
+
+  z-index: 10;
+}
+/* canvas */
+.background {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: -1;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-4 {
+  width: 2560px;
+  height: 1664px;
+
+  position: relative;
+  margin: 0;
+  /* border: 1px solid black; */
+  background-color: rgba(169, 245, 248, 0);
+}
+.canvas {
+  position: absolute;
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 832px;
+  border: 0px solid black;
+}
+/* text .container */
+.texts-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  border: 0px solid rgb(255, 0, 0);
+
+  display: flex;
+  gap: 20px;
+}
+.text-container {
+  position: relative;
+  /* display: inline-block; */
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.dash-stroke-tl {
+  width: 50%;
+  height: 50%;
+  border-top: 0px dashed rgba(0, 0, 0, 0.304);
+  border-left: 0px dashed rgba(0, 0, 0, 0.304);
+  border-right: 1px dashed rgba(0, 0, 0, 0.304);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.304);
+}
+.dash-stroke-br {
+  width: 50%;
+  height: 50%;
+  border-top: 1px dashed rgba(0, 0, 0, 0.304);
+  border-left: 1px dashed rgba(0, 0, 0, 0.304);
+  border-right: 0px dashed rgba(0, 0, 0, 0.304);
+  border-bottom: 0px dashed rgba(0, 0, 0, 0.304);
+
+  position: absolute;
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+}
+.text {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* canvas-1-ocean */
+.ocean-svg {
+  position: absolute;
+  bottom: 0;
+  border: 0px solid black;
+}
+#hai-in-box {
+  transition: opacity 2s;
+  opacity: 0;
+}
+#moving-text:hover {
+  fill: rgb(4, 72, 243);
+}
+/* canvas-2-star */
+.halo {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+.halo.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* 初始位置 */
+  }
+  15% {
+    transform: translateY(-30px); /* 向上移动 */
+  }
+  30% {
+    transform: translateY(0); /* 回到原位 */
+  }
+  45% {
+    transform: translateY(-15px); /* 向上移动 */
+  }
+  60% {
+    transform: translateY(0); /* 回到原位 */
+  }
+  75% {
+    transform: translateY(-7.5px); /* 小幅向上 */
+  }
+  90% {
+    transform: translateY(0); /* 最终回到原位 */
+  }
+}
+.star.bounce {
+  animation: bounce 1s ease-out; /* 应用弹跳动画 */
+}
+#xing-in-box {
+  transition: opacity 2s;
+  opacity: 0;
+}
+/* canvas-3-flower */
+.init-transparent {
+  opacity: 0;
+}
+.trigger-flower {
+  cursor: pointer;
+}
+#hua-in-box {
+  transition: opacity 2s;
+  opacity: 0;
+}
+/* canvas-4-thoughts */
+.thoughts-lines-svg {
+  position: absolute;
+  bottom: 0px;
+}
+.thoughts-line {
+  opacity: 0.1;
+  transition: opacity 1.5s;
+  cursor: pointer;
+}
+/* .thoughts-line:hover {
+  opacity: 1;
+} */
+.text-thoughts {
+  opacity: 0;
+  transition: opacity 2s;
+}
+.thoughts-line-shadow {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* canvas-5-final */
+.text-final {
+  display: none;
+}

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>错误</title>
+
+    <link rel="stylesheet" type="text/css" href="./mistake-style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/matter.min.js"></script>
+    <script src="libraries/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="title">《 错误 》<span>（节选）</span></div>
+    <div class="author">——郑愁予</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 832">
+      <g>
+        <path
+          id="zou-path"
+          d="M 562.985 144.278 C 565.999 136.611 576.3 121.278 593.396 121.278 C 613.122 121.278 624.354 136.611 629.148 144.278 C 633.668 136.611 644.354 121.278 661.203 121.278 C 678.053 121.278 689.285 136.611 694.901 144.278"
+          stroke="0 black"
+          style="paint-order: stroke; fill: none"
+        ></path>
+        <path
+          id="guo-path"
+          d="M 605.239 144.08 C 608.212 136.413 618.376 121.08 635.243 121.08 C 654.705 121.08 665.787 136.413 670.518 144.08 C 674.978 136.413 685.52 121.08 702.144 121.08 C 718.767 121.08 729.85 136.413 735.391 144.08"
+          stroke="0 blue"
+          style="paint-order: stroke; fill: none"
+        ></path>
+        <text
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: default;
+          "
+          x="498.249"
+          y="157.892"
+        >
+          我
+        </text>
+        <text
+          id="djn-text"
+          style="
+            fill: rgba(51, 51, 51);
+            opacity: 0;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            transition: opacity 3s;
+            cursor: default;
+          "
+          x="545.568"
+          y="202.435"
+          transform="translate(0,-45)"
+        >
+          打江南
+        </text>
+        <text
+          id="zou"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: pointer;
+          "
+          x="545.568"
+          y="157.307"
+        >
+          走
+        </text>
+        <animateMotion
+          id="zou-ani"
+          from="0"
+          to="1"
+          dur="2s"
+          keyPoints="0; 0.5; 1"
+          keyTimes="0; 0.3; 1"
+          href="#zou"
+          fill="freeze"
+          begin="indefinite"
+        >
+          <mpath href="#zou-path" />
+        </animateMotion>
+        <text
+          id="guo"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: pointer;
+          "
+          x="587.589"
+          y="157.307"
+        >
+          过
+        </text>
+        <animateMotion
+          id="guo-ani"
+          from="0"
+          to="1"
+          dur="3s"
+          href="#guo"
+          keyPoints="0; 0.5; 1"
+          keyTimes="0; 0.4; 1"
+          fill="freeze"
+          begin="indefinite"
+        >
+          <mpath href="#guo-path" />
+        </animateMotion>
+      </g>
+      <g>
+        <text
+          id="mask-text"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: default;
+            letter-spacing: 7px;
+          "
+          x="650"
+          y="234.974"
+          mask="url(#text-mask)"
+        >
+          那等在季节里的
+        </text>
+        <animate
+          id="mask-text-ani"
+          href="#mask-text"
+          attributeName="x"
+          from="650"
+          to="310.074"
+          dur="3s"
+          begin="indefinite"
+          keyTimes="0; 0.1; 0.7; 1"
+          values="650; 580; 450; 310.074"
+          fill="freeze"
+        ></animate>
+        <defs>
+          <mask id="text-mask" x="0" y="0" width="100%" height="100%">
+            <rect x="310.074" y="200" width="300" height="50" fill="white" />
+          </mask>
+        </defs>
+        <text
+          id="rongyan"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+
+            letter-spacing: 7px;
+          "
+          x="611.746"
+          y="234.373"
+          cursor="pointer"
+        >
+          容颜
+        </text>
+        <text
+          id="ru"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            opacity: 0;
+            transition: opacity 2s;
+          "
+          x="697.488"
+          y="233.975"
+        >
+          如
+        </text>
+        <text
+          id="lian"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            opacity: 0;
+            transition: opacity 2s;
+            cursor: default;
+          "
+          x="743.009"
+          y="107.994"
+        >
+          莲
+        </text>
+        <animateMotion
+          id="lian-text-ani"
+          from="0"
+          to="1"
+          dur="3s"
+          keyTimes="0;1"
+          keySplines="0.08 0.49 0.37 1"
+          calcMode="spline"
+          href="#lian"
+          fill="freeze"
+          begin="indefinite"
+        >
+          <mpath href="#lian-path" />
+        </animateMotion>
+
+        <text
+          id="hua"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            opacity: 0;
+            transition: opacity 2s;
+            cursor: default;
+          "
+          x="768.182"
+          y="74.057"
+        >
+          花
+        </text>
+        <animateMotion
+          id="hua-text-ani"
+          from="0"
+          to="1"
+          dur="3s"
+          keyTimes="0;1"
+          keySplines="0.31 0.26 0.25 0.99"
+          calcMode="spline"
+          href="#hua"
+          fill="freeze"
+          begin="indefinite"
+        >
+          <mpath href="#hua-path" />
+        </animateMotion>
+        <text
+          id="dekailuo"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+
+            letter-spacing: 7px;
+          "
+          x="700"
+          y="234.373"
+          cursor="pointer"
+        >
+          的开落
+        </text>
+        <animate
+          id="dekailuo-ani"
+          href="#dekailuo"
+          attributeName="x"
+          from="700"
+          to="828.152"
+          dur="2.5s"
+          begin="indefinite"
+          fill="freeze"
+          keyTimes="0;1"
+          keySplines="0.2 1 0.2 1"
+          calcMode="spline"
+        ></animate>
+        <path
+          id="lian-path"
+          style="stroke: 0 rgb(240, 95, 95); fill: none"
+          d="M 761.848 95.728 C 761.848 95.728 737.961 131.854 736.524 162.956 C 735.087 194.058 741.8 207.688 760.89 220.747"
+        />
+        <path
+          id="hua-path"
+          style="stroke: 0 rgb(0, 0, 0); fill: none"
+          d="M 787.157 63.996 C 787.157 63.996 810.799 101.807 817.701 128.678 C 826.281 162.08 836.565 196.072 800.818 220.414"
+        />
+      </g>
+      <g>
+        <text
+          id="sanyuede"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            opacity: 0;
+            transition: opacity 4s;
+            cursor: default;
+          "
+          x="589.744"
+          y="311.928"
+        >
+          三月的
+        </text>
+        <text
+          id="dongfeng"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            cursor: pointer;
+          "
+          x="634.299"
+          y="311.928"
+        >
+          东风
+        </text>
+        <animate
+          id="dongfeng-ani"
+          href="#dongfeng"
+          attributeName="x"
+          dur="4s"
+          fill="freeze"
+          values="634.299; 480;367 "
+          keyTimes="0; 0.5; 1"
+          keySplines="0.5 0 0.45 1; 0.5 0 0.45 1"
+          calcMode="spline"
+          begin="indefinite"
+        ></animate>
+        <text
+          id="bufei"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            opacity: 0;
+            transition: opacity 4s;
+            cursor: default;
+          "
+          x="805.462"
+          y="311.928"
+        >
+          不飞
+        </text>
+        <text
+          id="bulai"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            opacity: 0;
+            transition: opacity 4s;
+            cursor: default;
+          "
+          x="308.266"
+          y="311.928"
+        >
+          不来
+        </text>
+        <animate
+          id="bulai-ani"
+          href="#bulai"
+          attributeName="x"
+          dur="2.2s"
+          fill="freeze"
+          values="308.266; 455"
+          keyTimes="0; 1"
+          keySplines="0.5 0 0.45 1"
+          calcMode="spline"
+          begin="indefinite"
+        ></animate>
+
+        <path
+          d="M 765.462 285.793 L 779.538 285.793 L 779.538 288.061 L 765.462 288.061 L 765.462 285.793 Z M 772.482 282.337 L 774.93 282.913 C 774.282 284.137 773.574 285.433 772.806 286.801 C 772.038 288.145 771.27 289.453 770.502 290.725 C 769.758 291.997 769.062 293.137 768.414 294.145 L 766.182 293.137 C 766.806 292.201 767.49 291.109 768.234 289.861 C 769.002 288.613 769.758 287.329 770.502 286.009 C 771.246 284.689 771.906 283.465 772.482 282.337 Z M 768.162 292.561 L 769.89 290.941 C 771.042 291.325 772.218 291.805 773.418 292.381 C 774.618 292.957 775.758 293.557 776.838 294.181 C 777.918 294.805 778.818 295.393 779.538 295.945 L 777.774 297.745 C 777.078 297.169 776.19 296.557 775.11 295.909 C 774.03 295.261 772.89 294.649 771.69 294.073 C 770.49 293.473 769.314 292.969 768.162 292.561 Z M 780.114 306.205 L 782.778 306.205 L 782.778 315.709 L 780.114 315.709 L 780.114 306.205 Z M 779.646 295.369 L 781.986 296.485 C 780.978 297.421 779.886 298.357 778.71 299.293 C 777.558 300.205 776.478 300.985 775.47 301.633 L 773.598 300.589 C 774.246 300.133 774.942 299.605 775.686 299.005 C 776.454 298.381 777.186 297.757 777.882 297.133 C 778.578 296.485 779.166 295.897 779.646 295.369 Z M 786.054 297.745 L 788.538 299.005 C 787.314 299.965 785.982 300.961 784.542 301.993 C 783.102 303.025 781.638 303.997 780.15 304.909 C 778.686 305.821 777.306 306.625 776.01 307.321 L 774.21 306.169 C 775.506 305.449 776.886 304.609 778.35 303.649 C 779.814 302.689 781.218 301.693 782.562 300.661 C 783.906 299.605 785.07 298.633 786.054 297.745 Z M 770.502 300.661 L 772.23 299.221 C 773.118 299.629 774.03 300.097 774.966 300.625 C 775.926 301.153 776.826 301.693 777.666 302.245 C 778.53 302.797 779.25 303.301 779.826 303.757 L 778.026 305.377 C 777.498 304.921 776.802 304.405 775.938 303.829 C 775.098 303.253 774.198 302.689 773.238 302.137 C 772.302 301.585 771.39 301.093 770.502 300.661 Z M 787.17 302.677 L 788.934 301.237 C 790.014 301.837 791.118 302.509 792.246 303.253 C 793.398 303.997 794.466 304.765 795.45 305.557 C 796.458 306.325 797.274 307.045 797.898 307.717 L 795.954 309.301 C 795.378 308.629 794.598 307.909 793.614 307.141 C 792.654 306.349 791.61 305.569 790.482 304.801 C 789.354 304.009 788.25 303.301 787.17 302.677 Z M 786.414 309.805 L 788.43 308.329 C 789.438 308.761 790.494 309.265 791.598 309.841 C 792.726 310.417 793.782 311.017 794.766 311.641 C 795.774 312.241 796.614 312.805 797.286 313.333 L 795.162 314.989 C 794.538 314.461 793.734 313.873 792.75 313.225 C 791.766 312.601 790.722 311.989 789.618 311.389 C 788.514 310.789 787.446 310.261 786.414 309.805 Z M 766.218 305.521 C 767.874 305.521 769.77 305.509 771.906 305.485 C 774.042 305.461 776.334 305.437 778.782 305.413 C 781.254 305.389 783.786 305.353 786.378 305.305 C 788.994 305.257 791.598 305.209 794.19 305.161 L 794.082 307.069 C 790.722 307.165 787.338 307.273 783.93 307.393 C 780.546 307.489 777.342 307.573 774.318 307.645 C 771.294 307.693 768.63 307.741 766.326 307.789 L 766.218 305.521 Z M 773.994 308.329 L 776.442 309.301 C 775.65 310.045 774.726 310.777 773.67 311.497 C 772.638 312.193 771.57 312.841 770.466 313.441 C 769.386 314.065 768.33 314.605 767.298 315.061 C 767.154 314.893 766.95 314.689 766.686 314.449 C 766.446 314.233 766.182 314.005 765.894 313.765 C 765.63 313.549 765.402 313.369 765.21 313.225 C 766.77 312.625 768.354 311.893 769.962 311.029 C 771.57 310.165 772.914 309.265 773.994 308.329 Z M 779.034 285.793 L 779.502 285.793 L 780.006 285.685 L 781.482 286.225 C 780.786 288.865 779.742 291.097 778.35 292.921 C 776.982 294.721 775.338 296.173 773.418 297.277 C 771.498 298.381 769.398 299.233 767.118 299.833 C 766.998 299.545 766.818 299.209 766.578 298.825 C 766.338 298.441 766.098 298.129 765.858 297.889 C 767.946 297.409 769.878 296.689 771.654 295.729 C 773.43 294.745 774.966 293.473 776.262 291.913 C 777.558 290.329 778.482 288.421 779.034 286.189 L 779.034 285.793 Z M 786.306 287.197 L 786.306 294.325 L 793.866 294.325 L 793.866 287.197 L 786.306 287.197 Z M 783.822 284.857 L 796.494 284.857 L 796.494 296.629 L 783.822 296.629 L 783.822 284.857 Z"
+          id="xu"
+        ></path>
+        <path
+          d="M 735.618 285.937 L 738.066 286.729 L 738.066 306.061 L 735.618 306.061 L 735.618 285.937 Z M 733.314 305.917 C 734.49 305.653 735.894 305.305 737.526 304.873 C 739.158 304.441 740.826 303.997 742.53 303.541 L 742.782 305.629 C 741.27 306.133 739.77 306.625 738.282 307.105 C 736.794 307.561 735.426 307.993 734.178 308.401 L 733.314 305.917 Z M 746.778 285.901 L 754.41 285.901 L 754.41 288.205 L 749.19 288.205 L 749.19 315.637 L 746.778 315.637 L 746.778 285.901 Z M 753.258 285.901 L 755.706 285.901 L 755.706 306.205 C 755.706 306.829 755.634 307.333 755.49 307.717 C 755.346 308.101 755.07 308.401 754.662 308.617 C 754.254 308.833 753.714 308.965 753.042 309.013 C 752.394 309.061 751.554 309.085 750.522 309.085 C 750.474 308.773 750.378 308.389 750.234 307.933 C 750.09 307.453 749.934 307.057 749.766 306.745 C 750.462 306.769 751.086 306.781 751.638 306.781 C 752.19 306.781 752.55 306.769 752.718 306.745 C 753.078 306.721 753.258 306.529 753.258 306.169 L 753.258 285.901 Z M 743.106 282.481 L 745.302 284.065 C 744.534 284.593 743.694 285.133 742.782 285.685 C 741.894 286.213 741.006 286.705 740.118 287.161 C 739.23 287.617 738.39 288.025 737.598 288.385 L 735.906 287.017 C 736.674 286.633 737.502 286.189 738.39 285.685 C 739.278 285.157 740.13 284.617 740.946 284.065 C 741.786 283.489 742.506 282.961 743.106 282.481 Z M 741.738 288.817 L 744.114 288.817 L 744.114 299.113 C 744.114 300.481 744.042 301.921 743.898 303.433 C 743.754 304.921 743.43 306.409 742.926 307.897 C 742.422 309.385 741.654 310.801 740.622 312.145 C 739.614 313.489 738.246 314.689 736.518 315.745 C 736.374 315.481 736.134 315.169 735.798 314.809 C 735.486 314.449 735.198 314.161 734.934 313.945 C 736.518 313.033 737.766 311.977 738.678 310.777 C 739.614 309.553 740.298 308.269 740.73 306.925 C 741.162 305.557 741.438 304.201 741.558 302.857 C 741.678 301.513 741.738 300.253 741.738 299.077 L 741.738 288.817 Z M 723.99 290.329 L 734.286 290.329 L 734.286 292.849 L 723.99 292.849 L 723.99 290.329 Z M 728.418 282.517 L 730.83 282.517 L 730.83 315.601 L 728.418 315.601 L 728.418 282.517 Z M 728.382 291.841 L 729.966 292.345 C 729.726 293.737 729.414 295.201 729.03 296.737 C 728.67 298.273 728.25 299.785 727.77 301.273 C 727.29 302.761 726.774 304.153 726.222 305.449 C 725.694 306.721 725.142 307.813 724.566 308.725 C 724.422 308.389 724.206 308.005 723.918 307.573 C 723.654 307.141 723.426 306.769 723.234 306.457 C 723.786 305.641 724.314 304.669 724.818 303.541 C 725.346 302.413 725.838 301.189 726.294 299.869 C 726.75 298.525 727.158 297.169 727.518 295.801 C 727.878 294.433 728.166 293.113 728.382 291.841 Z M 730.614 295.189 C 730.806 295.429 731.094 295.861 731.478 296.485 C 731.862 297.085 732.27 297.745 732.702 298.465 C 733.158 299.185 733.566 299.857 733.926 300.481 C 734.286 301.105 734.538 301.549 734.682 301.813 L 733.278 303.757 C 733.11 303.301 732.858 302.725 732.522 302.029 C 732.186 301.333 731.826 300.613 731.442 299.869 C 731.058 299.101 730.686 298.393 730.326 297.745 C 729.99 297.097 729.726 296.593 729.534 296.233 L 730.614 295.189 Z"
+          id="liu"
+        ></path>
+        <text
+          id="liuxu"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            opacity: 0;
+            cursor: pointer;
+          "
+          x="721.485"
+          y="312.732"
+        >
+          柳絮
+        </text>
+      </g>
+      <g>
+        <text
+          id="nide"
+          style="
+            fill: rgb(51, 51, 51);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            opacity: 0;
+            transition: opacity 2s;
+            cursor: default;
+          "
+          x="393.232"
+          y="386.785"
+        >
+          你的
+        </text>
+        <text
+          id="xiangwan"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            cursor: pointer;
+          "
+          x="649.668"
+          y="425.055"
+        >
+          向晚
+        </text>
+        <animateTransform
+          id="xiangwan-ani"
+          href="#xiangwan"
+          attributeName="transform"
+          type="translate"
+          from="0 0"
+          to="105 28"
+          dur="3s"
+          fill="freeze"
+          begin="indefinite"
+        />
+        <text
+          style="
+            fill: rgba(51, 51, 51, 0);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: default;
+          "
+          x="481.082"
+          y="387.147"
+          id="xin-end"
+        >
+          心
+        </text>
+        <text
+          style="
+            fill: rgba(51, 51, 51, 0);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: default;
+          "
+          x="830.579"
+          y="386.219"
+          id="cheng-end"
+        >
+          城
+        </text>
+
+        <clipPath id="xxjm-clip">
+          <rect id="rect-clip" x="0" y="0" width="27%" height="100%"></rect>
+        </clipPath>
+        <animate
+          id="xxjm-ani"
+          href="#rect-clip"
+          attributeName="width"
+          dur="4s"
+          values="27%;40%;52%"
+          keyTimes="0;0.5;1"
+          keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+          calcMode="spline"
+          fill="freeze"
+          begin="indefinite"
+        ></animate>
+        <g
+          transform="matrix(1, 0, 0, 1, 172.656, -80.6408)"
+          clip-path="url(#xxjm-clip)"
+        >
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 36px;
+              letter-spacing: 7px;
+            "
+            x="356.164"
+            y="467.161"
+          >
+            如&nbsp;&nbsp;&nbsp; 的&nbsp; &nbsp; &nbsp; 的
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 30px;
+              letter-spacing: 5px;
+            "
+            x="397.016"
+            y="466.667"
+          >
+            小小
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 42px;
+              letter-spacing: 6px;
+            "
+            x="512.997"
+            y="465.901"
+          >
+            寂寞
+          </text>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 8.8178, 3.22627)" id="stones">
+          <text></text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 44.1px;
+              opacity: 0;
+            "
+            x="414.863"
+            y="464.393"
+          >
+            恰
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 40.7px;
+              opacity: 0;
+            "
+            x="477.387"
+            y="490.339"
+          >
+            若
+          </text>
+          <text></text>
+
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 36.2px;
+              opacity: 0;
+            "
+            x="531.992"
+            y="464.273"
+          >
+            青
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 31.7px;
+              opacity: 0;
+            "
+            x="579.843"
+            y="484.74"
+          >
+            石
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 30.8px;
+              opacity: 0;
+            "
+            x="626.406"
+            y="466.408"
+          >
+            的
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 26.6px;
+              opacity: 0;
+            "
+            x="669.212"
+            y="448.805"
+          >
+            街
+          </text>
+          <text
+            style="
+              fill: rgb(51, 51, 51);
+              font-family: Arial, sans-serif;
+              font-size: 25.2px;
+              opacity: 0;
+            "
+            x="707.69"
+            y="452.396"
+          >
+            道
+          </text>
+        </g>
+        <text
+          id="xin"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: pointer;
+          "
+          x="554.797"
+          y="426.214"
+        >
+          心
+        </text>
+        <animateTransform
+          id="xin-ani"
+          href="#xin"
+          attributeName="transform"
+          type="translate"
+          from="0 0"
+          to="-74 -39"
+          dur="1.5s"
+          fill="freeze"
+          begin="indefinite"
+        />
+        <text
+          id="cheng"
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            cursor: pointer;
+          "
+          x="600.084"
+          y="425.68"
+        >
+          城
+        </text>
+        <animateTransform
+          id="cheng-ani"
+          href="#cheng"
+          attributeName="transform"
+          type="translate"
+          from="0 0"
+          to="230 -39"
+          dur="3s"
+          fill="freeze"
+          begin="indefinite"
+        />
+        <text
+          style="
+            fill: rgba(51, 51, 51, 0);
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 7px;
+            cursor: default;
+          "
+          x="755.144"
+          y="452.871"
+          id="xiangwan-end"
+        >
+          向晚
+        </text>
+      </g>
+    </svg>
+    <script src="mistake-sketch.js"></script>
+  </body>
+</html>

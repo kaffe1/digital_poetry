@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Summer Flowers</title>
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/matter.min.js"></script>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+
+        background-image: url("bg.jpeg");
+        background-size: cover;
+        background-position: 0% 65%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+      }
+      body > div:nth-child(4) {
+        position: relative;
+        top: 10px;
+        color: rgba(0, 0, 0, 0.575);
+      }
+      body > div:first-child {
+        font-size: 24px;
+      }
+      #my-canvas-container {
+        width: 450px;
+        height: 650px;
+        overflow: hidden;
+        border-radius: 30px;
+        padding-left: 30px;
+        background-color: black;
+        border: 1px solid black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: scale(1);
+        cursor: none;
+      }
+      #my-canvas-container > canvas {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="title">《Stray Birds》(82)</div>
+    <div class="author">Tagore</div>
+    <div id="my-canvas-container"></div>
+    <div>————鼠标点击进行阅读————</div>
+    <script src="summerFlowers-sketch.js"></script>
+  </body>
+</html>

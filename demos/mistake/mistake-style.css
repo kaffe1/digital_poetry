@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "myFont";
+  src: url("./assets/qingkai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding-top: 100px;
+}
+body > svg {
+  transform: scale(0.85);
+  position: relative;
+
+  top: -110px;
+}
+body > div {
+  cursor: default;
+  text-align: center;
+}
+
+.title {
+  font-size: 34px;
+  padding-left: 55px;
+}
+.title span {
+  font-size: 22px;
+}
+.author {
+  font-size: 24px;
+  margin-top: 20px;
+  padding-left: 200px;
+}
+/* 我走过 */
+
+#guo:hover,
+#zou:hover,
+#rongyan:hover,
+#dekailuo:hover,
+#dongfeng:hover,
+#xin:hover,
+#cheng:hover,
+#xiangwan:hover {
+  fill: rgb(222, 168, 222);
+}
+#guo,
+#zou,
+#rongyan,
+#dekailuo,
+#dongfeng,
+#liu,
+#xu,
+#xin,
+#cheng,
+#xiangwan {
+  transition: fill 0.3s;
+}
+
+/* 容颜的开落 */

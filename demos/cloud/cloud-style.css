@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "myFont"; /* 自定义字体名称 */
+  src: url("assets/LongCang-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "myFont";
+}
+.poem {
+  display: inline-block;
+  width: 500px;
+  font-size: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.read {
+  width: 100px;
+  height: 42px;
+  font-size: 28px;
+  font-family: "myFont";
+
+  background-color: rgb(240, 235, 227);
+
+  border-radius: 5px;
+  border-width: 1px;
+  /* box-shadow: 2px 2px 8px rgba(156, 155, 152, 0.597); */
+
+  cursor: pointer;
+}
+
+.read:hover {
+  background-color: rgb(230, 222, 210);
+}

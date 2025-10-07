@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Digital Poetry Interaction</title>
+
+    <link rel="stylesheet" type="text/css" href="./dpi.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/matter.min.js"></script>
+    <script src="libraries/gsap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="video-ctn ctn">
+      <div class="sound">
+        <img src="./media/control-btn/sound.png" class="sound-img" alt="" />
+        <img
+          src="./media/control-btn/no-sound.png"
+          alt=""
+          class="no-sound-img"
+        />
+      </div>
+      <video class="video" autoplay muted loop>
+        <source src="media/digital_poetry_video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="none-video">
+      <div class="quick-demos-ctn ctn">
+        <div class="quick-demo-ctn">
+          <img
+            src="./media/quick-demo/waterfall.png"
+            class="small-img"
+            alt=""
+            onclick="intoDemo('waterfall')"
+          />
+          <span class="quick-demo-caption">「望庐山瀑布」</span>
+        </div>
+        <div class="quick-demo-ctn">
+          <img
+            src="./media/quick-demo/yuanri.png"
+            class="middle-img"
+            alt=""
+            onclick="intoDemo('yuanri')"
+          />
+          <span class="quick-demo-caption">「元日」</span>
+        </div>
+        <div class="quick-demo-ctn">
+          <img
+            src="./media/quick-demo/April.png"
+            class="large-img"
+            alt=""
+            onclick="intoDemo('April')"
+          />
+          <span class="quick-demo-caption">「你是人间四月天」</span>
+        </div>
+        <div class="quick-demo-ctn">
+          <img
+            src="./media/quick-demo/chase.png"
+            class="middle-img"
+            alt=""
+            onclick="intoDemo('chase')"
+          />
+          <span class="quick-demo-caption">「追寻」</span>
+        </div>
+        <div class="quick-demo-ctn">
+          <img
+            src="./media/quick-demo/fanxing.png"
+            class="small-img"
+            alt=""
+            onclick="intoDemo('fanxing')"
+          />
+          <span class="quick-demo-caption">「繁星」</span>
+        </div>
+      </div>
+      <div class="introduction-ctn ctn">
+        <h1 class="title">诗意交互</h1>
+
+        <h3 class="subtitle">基于前端web技术的动态诗歌创作研究</h3>
+        <div class="paragraph">
+          数字技术的发展和传播媒体的演变，给传统诗歌文学的发展带来了新的挑战和机遇...
+          ...<br />交互——作为人们理解事物的方式和数字世界的重要研究领域，能否为诗歌的发展注入新活力？<br />于是，本研究选择了交互能力强大、内容传播便捷的前端web技术，旨在探索如何用技术赋能文化：提升诗歌表现力，创造新型的数字诗歌阅读体验。
+        </div>
+        <div class="paragraph">
+          通过对传统诗歌概念“画面性”与“音乐性”、通用概念“空间”与“时间”等的解构和重构，并结合文献阅读、数字诗歌案例分析、web技术探索和demo实验等方法，我提出了一套基于web前端技术的诗歌创作理论体系，涵盖“内容表达”、“组成结构”、“阅读方式”三个层面，探索了数字诗歌独特的视听觉元素、时空结构类型和交互阅读方式。
+        </div>
+      </div>
+      <div class="content-ctn ctn">
+        <div class="controls-ctn">
+          <div
+            class="aspect1 control-btn"
+            onclick="showComponent('component1')"
+          >
+            <div class="content-icon">
+              <img src="media/control-btn/aspect1.png" alt="" />
+            </div>
+            <div class="content-title">内容表达</div>
+            <div class="content-details">
+              <span>-画面性</span>
+              <span>-音乐性</span>
+            </div>
+          </div>
+          <div
+            class="aspect2 control-btn"
+            onclick="showComponent('component2')"
+          >
+            <div class="content-icon">
+              <img src="media/control-btn/aspect2.png" alt="" />
+            </div>
+            <div class="content-title">组成结构</div>
+            <div class="content-details">
+              <span>-组成元素</span>
+              <span>-空间结构</span>
+              <span>-时间结构</span>
+            </div>
+          </div>
+          <div
+            class="aspect3 control-btn"
+            onclick="showComponent('component3')"
+          >
+            <div class="content-icon">
+              <img src="media/control-btn/aspect3.png" alt="" />
+            </div>
+            <div class="content-title">阅读方式</div>
+            <div class="content-details">
+              <span>-作者主导</span>
+              <span>-读者主导</span>
+              <span>-算法主导</span>
+            </div>
+          </div>
+        </div>
+        <div class="components-ctn">
+          <div class="component component1">
+            <div class="visuality">
+              <span class="visuality-level1 text-32px key-word">画面性</span>
+              <div class="map-line-ctn">
+                <img
+                  src="./media/aspect-1/visuality/mapline-688px.png"
+                  alt=""
+                />
+              </div>
+              <div class="demos-ctn">
+                <div class="demo">
+                  <span class="key-word visuality-env">环境</span>
+                  <div>
+                    <img
+                      src="./media/aspect-1/visuality/画面性-未选择的路.png"
+                      alt=""
+                      onclick="intoDemo('road')"
+                    />
+                  </div>
+                  <span>「未选择的路」</span>
+                </div>
+                <div class="demo">
+                  <span class="key-word visuality-car">载体</span>
+                  <div>
+                    <img
+                      src="./media/aspect-1/visuality/画面性-小窗幽记.png"
+                      alt=""
+                      onclick="intoDemo('cloud')"
+                    />
+                  </div>
+                  <span>「小窗幽记」</span>
+                </div>
+                <div class="demo">
+                  <span class="key-word visuality-img"> 诗形</span>
+                  <div>
+                    <img
+                      src="./media/aspect-1/visuality/画面性-望庐山瀑布.png"
+                      alt=""
+                      onclick="intoDemo('waterfall')"
+                    />
+                  </div>
+                  <span>「望庐山瀑布」</span>
+                </div>
+                <div class="demo">
+                  <span class="key-word visuality-txt"> 诗文</span>
+
+                  <div>
+                    <img
+                      src="./media/aspect-1/visuality/画面性-元日.png"
+                      alt=""
+                      onclick="intoDemo('yuanri')"
+                    />
+                  </div>
+                  <span>「元日」</span>
+                </div>
+              </div>
+            </div>
+            <div class="musicality">
+              <div class="musicality-level1 text-32px key-word">音乐性</div>
+              <div class="map-line-ctn">
+                <img
+                  src="./media/aspect-1/musicality/mapline-468px.png"
+                  alt=""
+                />
+              </div>
+              <div class="structure-box">
+                <div class="left">
+                  <div class="musicality-level2 key-word musicality-bea">
+                    节奏
+                  </div>
+                  <div class="map-line-ctn">
+                    <img
+                      src="./media/aspect-1/musicality/mapline-233px.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <span class="key-word musicality-spe">速率</span>
+                      <div>
+                        <img
+                          src="./media/aspect-1/musicality/fan.png"
+                          alt=""
+                          onclick="intoDemo('fan')"
+                        />
+                      </div>
+                      <span>「帆」</span>
+                    </div>
+                    <div class="demo">
+                      <span class="key-word musicality-str"> 重音</span>
+
+                      <div>
+                        <img
+                          src="./media/aspect-1/musicality/changxiangsi.png"
+                          alt=""
+                          onclick="intoDemo('longMiss')"
+                        />
+                      </div>
+                      <span>「长相思」</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="musicality-level2 key-word musicality-rhy">
+                    韵律
+                  </div>
+
+                  <div class="map-line-ctn">
+                    <img
+                      src="./media/aspect-1/musicality/mapline-3px.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <span class="key-word musicality-voi">发声</span>
+                      <div>
+                        <img
+                          src="./media/aspect-1/musicality/chenduimu.png"
+                          alt=""
+                          onclick="intoDemo('chenduimu')"
+                        />
+                      </div>
+                      <span>「晨对暮」</span>
+                    </div>
+                  </div>
+                  <div class="musicality-level2-added">
+                    <div class="map-line-ctn">
+                      <img
+                        src="./media/aspect-1/musicality/mapline-233px.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="musicality-level2-added-ctn">
+                      <span class="key-word musicality-ton">音调</span>
+                      <span class="key-word musicality-fee"> 韵脚</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="component component2">
+            <div class="composition">
+              <div class="title-ctn">
+                <div class="map-line-ctn">
+                  <img
+                    src="./media/aspect-2/composition/mapline-900px.png"
+                    alt=""
+                  />
+                </div>
+                <span class="text-32px key-word composition-title">组成</span>
+              </div>
+              <div class="structure-box">
+                <div class="left">
+                  <span class="level1 text-28px key-word composition-fea"
+                    >元素性质</span
+                  >
+                  <div class="map-line-ctn img-2">
+                    <img
+                      src="./media/aspect-2/composition/mapline-272px.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="structure-box">
+                    <div class="left">
+                      <span class="level2 key-word composition-cha"
+                        >字符类</span
+                      >
+                      <div class="map-line-ctn img-1">
+                        <img
+                          src="./media/aspect-2/composition/mapline-255px.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="level3-elements-ctn">
+                        <div class="level3-element-ctn">
+                          <span class="level3">文字</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/text.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">符号</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/symbol.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">数字</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/number.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">表情</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/emoji.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="right">
+                      <span class="level2 key-word composition-sha"
+                        >形状类</span
+                      >
+                      <div class="map-line-ctn img-1">
+                        <img
+                          src="./media/aspect-2/composition/mapline-255px-right.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="level3-elements-ctn">
+                        <div class="level3-element-ctn">
+                          <span class="level3">图形</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/shape.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">图像</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/pic.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">动图</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/gif.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="level3-element-ctn">
+                          <span class="level3">视频</span>
+                          <div class="level3-img-ctn">
+                            <img
+                              src="./media/aspect-2/composition/video.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <span class="level1 text-28px key-word composition-tec"
+                    >技术实现</span
+                  >
+                  <div class="map-line-ctn img-3">
+                    <img
+                      src="./media/aspect-2/composition/mapline-232px.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="level2-ctn">
+                    <span class="level2 key-word composition-dom">普通DOM</span>
+                    <span class="level2 key-word composition-svg">SVG</span>
+                    <span class="level2 key-word composition-can">Canvas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="structure">
+              <div class="title-ctn">
+                <div class="map-line-ctn">
+                  <img
+                    src="./media/aspect-2/composition/mapline-900px.png"
+                    alt=""
+                  />
+                </div>
+                <span class="text-32px key-word structure-title">结构</span>
+              </div>
+              <!-- this block I copied from musicality  -->
+              <div class="structure-space musicality">
+                <div class="text-28px key-word structure-spa">空间结构</div>
+                <div class="map-line-ctn">
+                  <img
+                    src="./media/aspect-1/musicality/mapline-468px.png"
+                    alt=""
+                  />
+                </div>
+                <div class="structure-box">
+                  <div class="right truely-left">
+                    <div class="key-word structure-lay">层叠型</div>
+                    <div class="map-line-ctn">
+                      <img
+                        src="./media/aspect-1/musicality/mapline-3px.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demos-ctn">
+                      <div class="demo">
+                        <div>
+                          <img
+                            src="./media/aspect-1/visuality/画面性-望庐山瀑布.png"
+                            alt=""
+                            onclick="intoDemo('waterfall')"
+                          />
+                        </div>
+                        <span>「望庐山瀑布」</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="left truley-right">
+                    <div class="musicality-level2 key-word structure-span">
+                      延展型
+                    </div>
+                    <div class="map-line-ctn">
+                      <img
+                        src="./media/aspect-1/musicality/mapline-233px.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demos-ctn">
+                      <div class="demo">
+                        <div>
+                          <img
+                            src="./media/aspect-2/structure/april.png"
+                            alt=""
+                            onclick="intoDemo('April')"
+                          />
+                        </div>
+                        <span>「四月天」</span>
+                      </div>
+                      <div class="demo">
+                        <div>
+                          <img
+                            src="./media/aspect-3/lower-box/繁星.png"
+                            alt=""
+                            onclick="intoDemo('fanxing')"
+                          />
+                        </div>
+                        <span>「繁星」</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="structure-time">
+                <div class="title text-28px key-word structure-tim">
+                  时间结构
+                </div>
+                <div class="map-line-ctn">
+                  <img
+                    src="./media/aspect-2/structure/mapline-890px.png"
+                    alt=""
+                  />
+                </div>
+                <div class="structure-box">
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 87.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-lin">线型</span>
+                    <div class="map-line-ctn vertical-line-ctn">
+                      <img
+                        src="./media/aspect-2/structure/mapline-vertical.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-2/structure/strayBirds.png"
+                          alt=""
+                          onclick="intoDemo('strayBirds')"
+                        />
+                      </div>
+                      <span>「飞鸟集」</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 88.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-fis">鱼翅型</span>
+                    <div class="map-line-ctn vertical-line-ctn">
+                      <img
+                        src="./media/aspect-2/structure/mapline-vertical.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-2/structure/mistake.png"
+                          alt=""
+                          onclick="intoDemo('mistake')"
+                        />
+                      </div>
+                      <span>「错误」</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 89.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-ret">迂回型</span>
+                    <div class="map-line-ctn vertical-line-ctn">
+                      <img
+                        src="./media/aspect-2/structure/mapline-vertical.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/lower-box/春暖花开.png"
+                          alt=""
+                          onclick="intoDemo('springFlower')"
+                        />
+                      </div>
+                      <span>「春暖花开」</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 90.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-tre">树型</span>
+                  </div>
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 91.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-loo">循环型</span>
+                    <div class="map-line-ctn vertical-line-ctn">
+                      <img
+                        src="./media/aspect-2/structure/mapline-vertical.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-2/structure/april.png"
+                          alt=""
+                          onclick="intoDemo('April')"
+                        />
+                      </div>
+                      <span>「四月天」</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="img-ctn">
+                      <img
+                        src="./media/aspect-2/structure/Frame 92.png"
+                        alt=""
+                      />
+                    </div>
+                    <span class="key-word structure-dot">散点型</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="component component3">
+            <div class="upper-box">
+              <span class="level1 text-32px key-word reading-title"
+                >阅读方式</span
+              >
+              <div class="map-line-ctn">
+                <img
+                  src="./media/aspect-3/upper-box/mapline-550px.png"
+                  alt=""
+                />
+              </div>
+              <div class="structure-box">
+                <div class="left">
+                  <span class="level2 key-word reading-aut">作者主导</span>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-1/musicality/fan.png"
+                          alt=""
+                          onclick="intoDemo('fan')"
+                        />
+                      </div>
+                      <span>「帆」</span>
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-1/musicality/chenduimu.png"
+                          alt=""
+                          onclick="intoDemo('chenduimu')"
+                        />
+                      </div>
+                      <span>「晨对暮」</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <span class="level2 key-word reading-pro">算法主导</span>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/upper-box/bochuangazhou.png"
+                          alt=""
+                          onclick="intoDemo('lingerBoat')"
+                        />
+                      </div>
+                      <span>「泊船瓜洲」</span>
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-1/visuality/画面性-小窗幽记.png"
+                          alt=""
+                          onclick="intoDemo('cloud')"
+                        />
+                      </div>
+                      <span>「小窗幽记」</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lower-box">
+              <div class="map-line-ctn">
+                <img src="./media/aspect-3/lower-box/mapline-3px.png" alt="" />
+              </div>
+              <span class="level2 key-word reading-rea">读者主导</span>
+              <div class="map-line-ctn">
+                <img
+                  src="./media/aspect-3/lower-box/mapline-432px.png"
+                  alt=""
+                />
+              </div>
+              <div class="structure-box">
+                <div class="left">
+                  <span class="level2 key-word reading-rul">基于规则</span>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/lower-box/元日.png"
+                          alt=""
+                          onclick="intoDemo('yuanri')"
+                        />
+                      </div>
+                      <span>「元日」</span>
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/lower-box/春暖花开.png"
+                          alt=""
+                          onclick="intoDemo('springFlower')"
+                        />
+                      </div>
+                      <span>「春暖花开」</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="right">
+                  <span class="level2 key-word reading-und">基于理解</span>
+                  <div class="demos-ctn">
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/lower-box/繁星.png"
+                          alt=""
+                          onclick="intoDemo('fanxing')"
+                        />
+                      </div>
+                      <span>「繁星」</span>
+                    </div>
+                    <div class="demo">
+                      <div>
+                        <img
+                          src="./media/aspect-3/lower-box/追寻.png"
+                          alt=""
+                          onclick="intoDemo('chase')"
+                        />
+                      </div>
+                      <span>「追寻」</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./dpi.js"></script>
+</html>

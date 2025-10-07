@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "myFont";
+  src: url("./assets/qingkai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+  /* margin-top: 200px; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  font-size: 48px;
+  font-family: myFont;
+}
+
+.poem-container {
+  width: 600px;
+  height: 400px;
+  /* border: 1px solid black; */
+  padding-left: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  position: absolute;
+  z-index: 1;
+
+  letter-spacing: 0.4em;
+  pointer-events: none;
+}
+.word-green {
+  opacity: 0;
+}
+
+.word-changing {
+  width: 40px;
+  height: 40px;
+  padding-right: 0.2em;
+
+  /* border: 1px solid black; */
+
+  position: absolute;
+  top: 35.5%;
+  left: 45.5%;
+
+  pointer-events: none;
+}
+.word-changing span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  animation: fade 1s cubic-bezier(0, 0.25, 1, 0.25) forwards;
+  pointer-events: none;
+
+  transition: opacity 1s;
+}
+/* 渐隐渐现动画 */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.square {
+  position: absolute;
+  background-color: #88f4dc78;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+}
+
+/* color changing */
+.test2 {
+  flex-shrink: 0;
+
+  width: 700px;
+  height: 500px;
+  /* border: 1px solid rgb(178, 40, 40); */
+  border-radius: 30px;
+
+  position: relative;
+  overflow: hidden;
+}
+.rotateCtn {
+  width: 800px;
+  height: 600px;
+  /* border: 1px solid rgba(255, 255, 255, 0); */
+
+  overflow: visible;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgb(255, 178, 127);
+
+  position: absolute;
+}
+.blur-mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(197, 253, 251, 0.147);
+
+  backdrop-filter: blur(40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+  cursor: none;
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* background-color: rgb(255, 233, 69); */
+  /* background: radial-gradient(circle, rgb(255, 226, 10), 50%, white); */
+  background: radial-gradient(50% 50% at 50% 50%, #96f87b 11.06%, #ffffff 100%);
+
+  pointer-events: none; /* 不阻挡点击 */
+  /* z-index: -2; */
+  transform: translate(-50%, -50%);
+}
+
+/* Ellipse 29 */

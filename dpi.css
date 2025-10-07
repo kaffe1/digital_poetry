@@ -1,0 +1,735 @@
+@font-face {
+  font-family: "qingKai";
+  src: url("./assets/qingkai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fangSong";
+  src: url("./assets/fangsongHY.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: "fangSong"; */
+  font-family: "苹方-简";
+  font-family: "宋体-简";
+  font-family: "华文宋体";
+  font-size: 22px;
+  letter-spacing: 0.13rem;
+  line-height: 2.4rem;
+}
+.none-video {
+  background-image: url(./media/gradient-bg.png);
+  /* background-size: cover; */
+}
+/* .ctn {
+  border: 1px solid black;
+} */
+.video-ctn {
+  width: 100vw;
+  height: 100vh;
+
+  color: aliceblue;
+  font-size: 72px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.video {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.sound {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  cursor: pointer;
+}
+.sound img {
+  width: 100%;
+}
+.sound-img {
+  display: none;
+}
+/* quick-demos—————————————————————————————————— */
+.quick-demos-ctn {
+  height: 440px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 72px;
+  overflow: hidden;
+}
+.quick-demo-ctn {
+  font-size: 22px;
+  color: #79768a;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+.quick-demo-ctn img {
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.small-img {
+  width: 140px;
+}
+.middle-img {
+  width: 170px;
+}
+.large-img {
+  width: 210px;
+}
+.quick-demo-ctn span {
+  cursor: default;
+}
+/* introduction—————————————————————————————————— */
+.introduction-ctn {
+  /* height: 600px; */
+
+  padding: 0px 12vw;
+}
+.paragraph {
+  color: #46444e;
+  margin-top: 50px;
+}
+/* contents—————————————————————————————————— */
+/* controls-btn——————————————— */
+.content-ctn {
+  padding: 100px 100px 200px 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.controls-ctn {
+  display: flex;
+  justify-content: center;
+  /* gap: 103px; */
+  gap: 10vw;
+}
+.control-btn {
+  width: 225px;
+  height: 330px;
+  width: 200px;
+  height: 300px;
+  border-radius: 112.5px;
+  background-color: rgba(255, 255, 255, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.75s;
+}
+.control-btn:hover,
+.control-btn.active {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+}
+
+.content-icon {
+  width: 53px;
+  height: 53px;
+  /* border: 1px solid black; */
+  margin-top: 38px;
+  margin-bottom: 25px;
+}
+.content-icon img {
+  width: 100%;
+}
+.content-title {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.content-details {
+  height: 110px;
+  padding-right: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.content-details span {
+  font-size: 20px;
+  line-height: 2rem;
+}
+
+/* components——————————————— */
+
+.text-32px {
+  font-size: 32px;
+}
+.text-28px {
+  font-size: 28px;
+}
+.components-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+}
+.component {
+  width: 82vw;
+  /* height: 160vh; */
+  border-radius: 50px;
+  font-size: 24px;
+  padding: 120px 0px 200px 0px;
+  position: absolute;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: opacity 1s;
+}
+
+/* component———————1———————— */
+
+.component1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 150px;
+}
+.visuality {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-line-ctn {
+  display: flex;
+  margin: 18px auto;
+}
+.visuality .map-line-ctn {
+  width: 748px;
+  /* transform: scaleX(1.19); */
+}
+.map-line-ctn > img {
+  width: 100%;
+}
+
+.demos-ctn {
+  width: 100%;
+  /* for fix */
+  margin-right: 5px;
+
+  display: flex;
+
+  justify-content: center;
+  gap: 100px;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+/* general setting */
+.demo > div {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: box-shadow 0.75s;
+}
+.demo > div:hover {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  box-shadow: 0px -8px 16px rgba(72, 0, 255, 0.25);
+}
+.demo > div > img {
+  width: 100%;
+}
+.demo > span:last-child {
+  font-size: 20px;
+  color: #79768a;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.musicality {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.musicality > .map-line-ctn {
+  width: 468px;
+}
+.musicality > .map-line-ctn > img {
+  width: 100%;
+}
+.musicality > .structure-box {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 175px;
+  padding-right: 86px;
+}
+.musicality > .structure-box > .left {
+  width: 377px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.musicality .left .map-line-ctn {
+  width: 233px;
+}
+
+.musicality > .structure-box > .right {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 0;
+}
+.musicality .right .map-line-ctn {
+  width: 3.33px;
+}
+.musicality .right > .demos-ctn {
+  justify-content: center;
+}
+.musicality-level2-added {
+  width: 400px;
+  position: absolute;
+  top: 40px;
+  /* z-index: -1; */
+  pointer-events: none;
+}
+.musicality .musicality-level2-added .map-line-ctn {
+  width: 233px;
+}
+.musicality-level2-added-ctn {
+  display: flex;
+  justify-content: center;
+  gap: 190px;
+}
+.musicality-level2-added-ctn span {
+  pointer-events: all;
+}
+/* component———————2———————— */
+.component2 {
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 170px;
+}
+
+/* composition——————————————— */
+.composition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 80px;
+}
+.component2 .title-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+.component2 .title-ctn > span {
+  position: absolute;
+}
+.component2 .title-ctn > .map-line-ctn {
+  width: 85%;
+}
+/* the larger .structure-box */
+.composition > .structure-box {
+  display: flex;
+
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.composition > .structure-box > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.img-2 {
+  width: 272px;
+}
+/* the smaller .structure-box */
+.composition .structure-box:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 31px;
+}
+.composition .structure-box:nth-child(3) > .left > span {
+  position: relative;
+  left: 44px;
+}
+.composition .structure-box:nth-child(3) > .right > span {
+  position: relative;
+  right: 42px;
+}
+.composition .structure-box:nth-child(3) > div {
+  width: 330px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-1 {
+  width: 280px;
+}
+.composition .level3-elements-ctn {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* gap: 20px; */
+}
+.composition .level3-element-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 6px;
+}
+.level3-img-ctn {
+  width: 40px;
+}
+.level3-img-ctn img {
+  width: 100%;
+}
+
+.composition > .structure-box > .right > .level2-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+}
+.level2-ctn > span:nth-child(2) {
+  margin-left: 0px;
+  margin-right: 20px;
+}
+.img-3 {
+  width: 232px;
+}
+
+/* structure——————————————— */
+.structure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 80px;
+}
+.structure-space > .structure-box {
+  padding-right: 0;
+  padding-left: 86px;
+}
+.structure-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 50px;
+}
+.structure-time > .map-line-ctn {
+  width: 890px;
+}
+.structure-time > .structure-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 77.5px;
+}
+.structure-time > .structure-box > div {
+  width: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.structure-time .img-ctn {
+  width: 100px;
+}
+.structure-time .img-ctn > img {
+  width: 100%;
+}
+.vertical-line-ctn {
+  width: 3.33px;
+}
+
+/* component———————3———————— */
+.component3 {
+  height: 760px;
+
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* position: relative; */
+  z-index: 0;
+}
+.component3 > .upper-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.component3 > .upper-box > .map-line-ctn {
+  width: 550px;
+}
+.component3 > .upper-box > .structure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 240px;
+}
+/* left || right boxes in structure box */
+.component3 .structure-box > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.component3 .structure-box > div > .demos-ctn {
+  gap: 20px;
+  margin-top: 16px;
+  margin-right: 0px;
+}
+
+.component3 > .lower-box {
+  position: absolute;
+
+  top: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  pointer-events: none;
+}
+.component3 > .lower-box > .map-line-ctn:first-child {
+  width: 3.33px;
+}
+.component3 > .lower-box > .map-line-ctn:nth-child(3) {
+  width: 432px;
+}
+.component3 > .lower-box > .structure-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 120px;
+  pointer-events: all;
+}
+.component3 > .lower-box > .key-word {
+  pointer-events: all;
+}
+
+/* key-words————————————————————————— */
+.key-word {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.key-word::after {
+  content: " ";
+  text-align: center;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  line-height: 1.3em;
+  width: 250px;
+  opacity: 0;
+  background-color: rgba(219, 219, 255, 0.34);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+
+  position: absolute;
+  bottom: 40px;
+  padding: 12px 12px;
+
+  transition: opacity 0.75s;
+  pointer-events: none;
+  z-index: 100;
+}
+.key-word:hover::after {
+  opacity: 1;
+}
+
+.visuality-level1::after {
+  content: "指数字诗歌在视觉方面的特性。参考传统诗歌的视觉层级，画面性由远及近涵盖环境、载体、诗形（图像）、诗文（文字）四个方面";
+}
+.visuality-env::after {
+  content: "指充盈浏览器视口中某一区域的整体画面内容。相较于现实环境，数字诗歌的环境覆盖二维和三维、画面风格更多样、且具有动态和交互能力";
+}
+.visuality-car::after {
+  content: "指文字在数字空间中的承载形式。与传统的纸张、竹简等载体相比，数字诗歌载体不受材质控制而更灵活、能通过计算机技术模拟出丰富的材质、可与诗文建立语义关联、拥有动态交互能力";
+}
+.visuality-img::after {
+  content: "指与诗歌内容相对应的、具有交互性和动态能力的非字符类视觉元素。诗形最大的特点是其动态性，可以通过交互行为与诗文的内容一一对应";
+}
+.visuality-txt::after {
+  content: "指具有交互性和动态能力的字符类视觉元素。诗文的动态行为赋予了自身强大的表现力，空间排布也打破了按照一定规则的线性分布的传统限制";
+}
+.musicality-level1::after {
+  content: "指数字诗歌在听觉方面的性质，包含节奏和韵律两大方面";
+}
+.musicality-bea::after {
+  content: "诗歌中交替出现有规律的强弱、长短的现象。字词的强弱对应重音，长短对应速率";
+}
+.musicality-spe::after {
+  content: "可简单理解为诗歌阅读的快慢，取决于单个字的持续时间和多个字的字间间隔。诗歌的阅读速率对于内容情感的传达有重要意义";
+}
+.musicality-str::after {
+  content: "诗歌中与主旨情感相关的字词通常会被有意强调，朗读时加重语气或延长发音、停顿。案例中尝试用文字的物理性质对应重音强弱";
+}
+
+.musicality-rhy::after {
+  content: "诗歌中关于声音、发音的原理和规律";
+}
+.musicality-ton::after {
+  content: "平仄、抑扬、顿挫等语音特征";
+}
+.musicality-fee::after {
+  content: "诗句结尾处字词的押韵特性";
+}
+.musicality-voi::after {
+  content: "单个字词发音的口型、气息等特点。这种特点只有通过读者真实发声朗读加以体会，所以下方的案例尝试用声音交互的方式引导读者发声";
+}
+
+.composition-title::after {
+  content: "诗歌的组成结构，可类比于建造房屋，我们探讨用什么材料、如何搭建。其中，数字诗歌的原料就是这里的“组成”";
+}
+.composition-fea::after {
+  content: "数字诗歌的“原料”可根据元素自身性质和呈现特点，分为“字符类”和“形状类”";
+}
+.composition-cha::after {
+  content: "字符类指那些经过Unicode编码可直接通过键盘键入的元素";
+}
+.composition-sha::after {
+  content: "形状类指需要利用计算机矢量绘图或引入外部文件的元素";
+}
+.composition-tec::after {
+  content: "数字诗歌的“原料”可根据元素基于Web技术的实现方式不同，划分到三类技术空间里";
+}
+.composition-dom::after {
+  content: "构成网页中最基本的结构，也是内容承载单元，包括如 <div>、<span>、<p>、<img>、<video> 等标签";
+}
+.composition-svg::after {
+  content: "用于描述基于矢量图形的 XML 元素，如 <circle>、<line>、<svg>，适合绘制可缩放、可交互的图形";
+}
+.composition-can::after {
+  content: "一种基于像素渲染的位图画布，需通过 JavaScript 中的 Canvas API 接口动态绘制";
+}
+
+.structure-title::after {
+  content: "诗歌的组成结构，可类比于建造房屋，我们探讨用什么材料、如何搭建。其中，搭建过程使用的框架就是这里的“结构”";
+}
+.structure-spa::after {
+  content: "数字诗歌的空间结构可以通过拓展水平空间(延展型)和纵深空间(层叠型)来囊括更多内容";
+}
+.structure-lay::after {
+  content: "层叠型空间结构通过不同层级画面的相互遮盖来呈现丰富的画面内容";
+}
+.structure-span::after {
+  content: "延展型空间结构通过拖动滑块、滚动页面等操作，触及到当前可视范围外的内容";
+}
+.structure-tim::after {
+  content: "数字诗歌受益于文本的“动态”特点，在整体诗歌的阅读路径上有了除线性外的更多可能";
+}
+.structure-lin::after {
+  content: "线型阅读是指按照文本既定的顺序，从头到尾连续阅读的方式，是最基本、最传统的方式";
+}
+.structure-fis::after {
+  content: "鱼翅型是指在主线阅读为线型的基础上，于阅读过程中不断分岔出新的线索和内容";
+}
+.structure-ret::after {
+  content: "迂回型阅读是指在阅读过程中不时回溯到之前的阅读内容，可产生语义强调的作用";
+}
+.structure-tre::after {
+  content: "树型阅读是指在阅读中读者不断面临“岔路”的决策，随着每一次选择，阅读路径逐渐延展成型，最终抵达不同的诗歌结尾";
+}
+.structure-loo::after {
+  content: "循环型结构是指数字诗歌在阅读过程上呈现出首尾相连、循环往复的特点";
+}
+.structure-dot::after {
+  content: "散点型诗歌的每个阅读节点内容不固定，或阅读路径的顺序不确定";
+}
+
+.reading-title::after {
+  content: "数字诗歌特有的“动态交互”特点，使其可不仅仅局限于传统的基于某一特定规则（如从左到右、从上到下）的阅读方式";
+}
+.reading-aut::after {
+  content: "诗歌阅读的节奏或内容由创作者控制，读者的主要阅读行为是观看，也可进行一些不影响阅读进展的微交互";
+}
+.reading-pro::after {
+  content: "诗歌阅读的节奏或内容由算法控制，读者的交互行为伴随着随机性结果";
+}
+.reading-rea::after {
+  content: "诗歌阅读的节奏或内容由读者控制，自由度和灵活性较高";
+}
+.reading-rul::after {
+  content: "阅读中的交互行为通过默认的或明示的规则呈现，读者基于规则进行交互阅读";
+}
+.reading-und::after {
+  content: "阅读中的交互行为通过诗歌本身的内容来暗示，读者需要在理解诗歌的基础上结合常识进行交互";
+}
